@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
-import  {Header}  from "./Header";
-import  {Picture}  from "./Picture";
+import React from 'react'
+import {Header}  from "./Header";
+import {Picture}  from "./Picture";
 import {View} from "react-native"
 import styles from './styles'
 import { Footer } from './Footer';

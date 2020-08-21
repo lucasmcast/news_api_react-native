@@ -1,0 +1,1 @@
+export {default as ContainerNews} from './ContainerNews'

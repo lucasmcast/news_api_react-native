@@ -8,7 +8,6 @@ export default function(state = initialState, action){
     switch(action.type){
         case GET_NEWS:{
             const newsAPI = action.payload.newsAPI;
-            console.log("Aquiiii", newsAPI)
             return {...state, news: newsAPI}
         }
         default:

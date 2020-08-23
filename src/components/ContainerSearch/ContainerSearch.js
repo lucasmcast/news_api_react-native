@@ -1,30 +1,48 @@
-import React, {useState} from 'react';
-import {View, TextInput} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import { getNews } from '../../redux/actions'
 import { Button } from "../Button";
+import EndPoint from '../../models/EndPoint';
+import getDataAPI from '../../dao/newsDAO'
 
-const handleSearchNews = (input, dispach) => event =>{
-    console.log(input.text)
+const getData = (endPoint) => {
+    const news = getDataAPI(endPoint);
+    return news;
 }
-function ContainerSearch(props){
-    const [search, setSearch] = useState("")
-    let dispach = props.getNews
-    return(
+
+function ContainerSearch(props) {
+    const [search, setSearch] = useState("");
+
+    return (
         <View style={styles.containerSearch}>
-            <TextInput 
-            style={styles.inputSearch}
-            onChangeText={text => {
-                setSearch({text})
-            }}
+            <TextInput
+                style={styles.inputSearch}
+                onChangeText={text => {
+                    setSearch({ text })
+                }}
+                value={search}
             />
-            <Button 
-                onClick={handleSearchNews(search, dispach)}
-                color={"#01579B"} 
+            <Button
+                onClick={event => {
+
+                    let query = `q=${search.text}`
+                    let endPoint = new EndPoint("everything", query)
+                    
+                    let data = getData(endPoint);
+
+                    data.then((resp) => {
+                       props.getNews(resp)
+                       setSearch("")
+                    })
+                }}
+
+                color={"#01579B"}
                 name={"Buscar"} />
         </View>
     )
 }
 
-export default connect(null, {getNews})(ContainerSearch);
+
+export default connect(null, { getNews })(ContainerSearch);

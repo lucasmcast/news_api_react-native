@@ -10,7 +10,9 @@ import { View } from 'react-native'
 function Main(props) {
 
     const [news, setNews] = useState([]);
-    const endPoint = new EndPoint("everything", "q=futebol")
+    const functionSearch = "top-headlines";
+    const query = "country=br"
+    const endPoint = new EndPoint(functionSearch, query)
 
     useEffect(() => {
         const readNews = async () => {

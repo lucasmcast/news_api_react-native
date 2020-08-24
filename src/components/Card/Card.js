@@ -10,7 +10,7 @@ function Card({item}) {
         <View style={styles.card}>
             <Header title={item.title}/>
             <Picture descriptioPicture={item.source.name} urlPicture={item.urlToImage}/>
-            <Footer></Footer>
+            <Footer item={item}></Footer>
         </View>
     )
 }

@@ -16,63 +16,63 @@ class News{
         this.isFavorite = false;
     }
 
-    set author(author){
-        this._author = author;
+    set author(authorAPI){
+        this._author = authorAPI;
     }
     get author(){
         return this._author;
     }
 
-    set title(title){
-        this._title = title;
+    set title(titleAPI){
+        this._title = titleAPI;
     }
     
     get title(){
         return this._title;
     }
 
-    set content(content){
-        this._content = content;
+    set content(contentAPI){
+        this._content = contentAPI;
     }
 
     get content(){
         return this._content;
     }
 
-    set description(description){
-        this._description = description;
+    set description(descriptionAPI){
+        this._description = descriptionAPI;
     }
 
     get description(){
         return this._description;
     }
 
-    set publishedAt(publishedAt){
-        this._publishedAt = publishedAt;
+    set publishedAt(publishedAtAPI){
+        this._publishedAt = publishedAtAPI;
     }
 
     get publishedAt(){
         return this._publishedAt;
     }
 
-    set source(source){
-        this._source = source;
+    set source(sourceAPI){
+        this._source = sourceAPI;
     }
 
     get source(){
         return this._source;
     }
     
-    set url(url){
-        this._url = url
+    set url(urlAPI){
+        this._url = urlAPI
     }
 
     get url(){
         return this._url;
     }
 
-    set urlImage(urlImage){
-        this._urlImage = urlImage
+    set urlImage(urlImageAPI){
+        this._urlImage = urlImageAPI
     }
 
     get urlImage(){

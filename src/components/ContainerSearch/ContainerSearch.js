@@ -20,14 +20,15 @@ function ContainerSearch(props) {
             <TextInput
                 style={styles.inputSearch}
                 onChangeText={text => {
-                    setSearch({ text })
+                    setSearch( text )
                 }}
+                placeholder={"Pesquisar por assunto..."}
                 value={search}
             />
             <Button
                 onClick={event => {
 
-                    let query = `q=${search.text}`
+                    let query = `q=${search}&language=pt`
                     let endPoint = new EndPoint("everything", query)
                     
                     let data = getData(endPoint);

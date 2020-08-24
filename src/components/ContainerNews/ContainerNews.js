@@ -2,10 +2,10 @@ import React from 'react';
 import {Card} from '../Card';
 import { connect } from 'react-redux';
 import {View, FlatList} from 'react-native'
-
+import styles from './styles'
 function ContainerNews(props){
     return(
-        <View>
+        <View style={styles.containerNews}>
             <FlatList
                 data={props.news}
                 keyExtractor={(item) => item.title}

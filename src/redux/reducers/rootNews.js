@@ -1,7 +1,8 @@
-import {GET_NEWS} from '../actionsTypes'
+import {GET_NEWS, ADD_FAVORITE} from '../actionsTypes'
 
 const initialState = {
-    news: []
+    news: [],
+    favorites: []
 }
 
 export default function(state = initialState, action){
@@ -9,6 +10,13 @@ export default function(state = initialState, action){
         case GET_NEWS:{
             const newsAPI = action.payload.newsAPI;
             return {...state, news: newsAPI}
+        }
+        case ADD_FAVORITE:{
+            const newsFavorite = action.payload.news
+            const news = [...state.news]
+            console.log(state.favorites)
+            return{...state.news, news,
+                ...state.favorites, favorites: [...state.favorites, newsFavorite]}
         }
         default:
             return state;

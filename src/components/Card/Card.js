@@ -5,12 +5,12 @@ import {View} from "react-native"
 import styles from './styles'
 import { Footer } from './Footer';
 
-function Card({item}) {
+function Card(props) {
     return (
         <View style={styles.card}>
-            <Header title={item.title}/>
-            <Picture descriptioPicture={item.source.name} urlPicture={item.urlToImage}/>
-            <Footer item={item}></Footer>
+            <Header title={props.item.title}/>
+            <Picture descriptioPicture={props.item.source.name} urlPicture={props.item.urlToImage}/>
+            <Footer isFavorite={props.isFavorite} item={props.item}></Footer>
         </View>
     )
 }

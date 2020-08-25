@@ -5,7 +5,7 @@ const largura = Dimensions.get("screen").width;
 const styles = StyleSheet.create({
     picture: {
         width: "100%",
-        height: largura
+        height: largura-100
     },
     description:{
         textAlign: "center"

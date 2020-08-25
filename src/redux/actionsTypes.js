@@ -1,2 +1,4 @@
 export const GET_NEWS = "GET_NEWS"
 export const ADD_FAVORITE = "ADD_FAVORITE"
+export const CHANGE_TYPE_NEWS = "CHANGE_TYPE_NEWS"
+export const CHANGE_VISIBLE_MODAL = "CHANGE_VISIBLE_MODAL"

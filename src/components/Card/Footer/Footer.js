@@ -4,10 +4,15 @@ import styles from './styles'
 import { Button } from '../../Button'
 
 function Footer(props) {
+    console.log(props.isFavorite)
     return(
         <View style={styles.container}>
             <Button item={props.item} variant={"modal"} color={"#01579B"} name={"Ver Mais"}/>
-            <Button item={props.item} variant={"favorite"} color={"#B71C1C"} name={"Favoritar"}/>
+            {props.isFavorite 
+            ?  <Button item={props.item} variant={"delete"} color={"#B71C1C"} name={"Apagar"}/>
+            :  <Button item={props.item} variant={"favorite"} color={"#66BB6A"} name={"Favoritar"}/>
+            }
+            
         </View>
     ) 
 }

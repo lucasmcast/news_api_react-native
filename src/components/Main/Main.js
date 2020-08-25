@@ -6,6 +6,7 @@ import getDataAPI from '../../dao/newsDAO'
 import EndPoint from '../../models/EndPoint';
 import { ContainerSearch } from '../ContainerSearch';
 import { View } from 'react-native'
+import { Tabs } from '../Tabs';
 
 function Main(props) {
 
@@ -27,6 +28,7 @@ function Main(props) {
 
     return (
         <View>
+            <Tabs></Tabs>
             <ContainerSearch></ContainerSearch>
             <ContainerNews/>
         </View>

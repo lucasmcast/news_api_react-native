@@ -5,8 +5,6 @@ const styles = StyleSheet.create({
         width: "40%",
         elevation: 8,
         borderRadius: 20,
-        paddingVertical: 10,
-        paddingHorizontal: 12,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

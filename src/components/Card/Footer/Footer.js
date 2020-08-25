@@ -4,7 +4,6 @@ import styles from './styles'
 import { Button } from '../../Button'
 
 function Footer(props) {
-    console.log(props.isFavorite)
     return(
         <View style={styles.container}>
             <Button item={props.item} variant={"modal"} color={"#01579B"} name={"Ver Mais"}/>

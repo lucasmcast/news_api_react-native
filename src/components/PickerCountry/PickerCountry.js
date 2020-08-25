@@ -3,13 +3,7 @@ import { View, Picker } from 'react-native'
 import { getNews } from '../../redux/actions'
 import { connect } from 'react-redux'
 import styles from './styles'
-import EndPoint from '../../models/EndPoint';
-import getDataAPI from '../../dao/newsDAO'
 
-const getData = (endPoint) => {
-    const news = getDataAPI(endPoint);
-    return news;
-}
 
 function ModalCountry(props) {
 
@@ -22,16 +16,21 @@ function ModalCountry(props) {
                 selectedValue={selectedValue}
                 onValueChange={(itemValue, itemIndex) => {
 
+                    // let query = `country=${itemValue}`
+                    // let endPoint = new EndPoint("top-headlines", query)
+
+                    // let data = getData(endPoint);
+
+                    // data.then((resp) => {
+                    //     props.getNews(resp)
+                    //     setSelectedValue(itemValue)
+                    // })
+                    
                     let query = `country=${itemValue}`
-                    let endPoint = new EndPoint("top-headlines", query)
+                    let endpoint = "top-headlines"
+                    props.getNews(endpoint,query)
 
-                    let data = getData(endPoint);
-
-                    data.then((resp) => {
-                        props.getNews(resp)
-                        setSelectedValue(itemValue)
-                    })
-
+                    setSelectedValue(itemValue)
 
                 }}
             >

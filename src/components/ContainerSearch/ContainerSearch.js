@@ -20,7 +20,7 @@ function ContainerSearch(props) {
             <TextInput
                 style={styles.inputSearch}
                 onChangeText={text => {
-                    setSearch( text )
+                    setSearch(text)
                 }}
                 placeholder={"Pesquisar por assunto..."}
                 value={search}
@@ -28,15 +28,12 @@ function ContainerSearch(props) {
             <Button
                 onClick={event => {
 
-                    let query = `q=${search}&language=pt`
-                    let endPoint = new EndPoint("everything", query)
-                    
-                    let data = getData(endPoint);
+                    let query = `q=${search}&language=pt`;
+                    let functionSearch = "everything";
 
-                    data.then((resp) => {
-                       props.getNews(resp)
-                       setSearch("")
-                    })
+                    props.getNews(functionSearch, query)
+                    setSearch("")
+
                 }}
 
                 color={"#01579B"}

@@ -1,4 +1,4 @@
-import {GET_NEWS, CHANGE_TYPE_NEWS, CHANGE_VISIBLE_MODAL} from '../actionsTypes'
+import {GET_NEWS, SHOW_NEWS, CHANGE_TYPE_NEWS, CHANGE_VISIBLE_MODAL} from '../actionsTypes'
 
 const initialState = {
     news: [],
@@ -8,8 +8,8 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){
-        case GET_NEWS:{
-            const newsAPI = action.payload.newsAPI;
+        case SHOW_NEWS:{
+            const newsAPI = action.payload.news
             return {
                 ...state, news: newsAPI, 
                 isFavorite:false, 

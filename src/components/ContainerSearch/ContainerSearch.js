@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import { getNews } from '../../redux/actions'
 import { Button } from "../Button";
-import EndPoint from '../../models/EndPoint';
-import getDataAPI from '../../dao/newsDAO'
-
-const getData = (endPoint) => {
-    const news = getDataAPI(endPoint);
-    return news;
-}
 
 function ContainerSearch(props) {
     const [search, setSearch] = useState("");

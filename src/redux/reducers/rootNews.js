@@ -1,9 +1,8 @@
-import {SHOW_NEWS, CHANGE_TYPE_NEWS, CHANGE_VISIBLE_MODAL} from '../actionsTypes'
+import {SHOW_NEWS, CHANGE_TYPE_NEWS} from '../actionsTypes'
 
 const initialState = {
     news: [],
     isFavorite:false,
-    visibleModalCountry: false
 }
 
 export default function(state = initialState, action){
@@ -12,17 +11,12 @@ export default function(state = initialState, action){
             const newsAPI = action.payload.news
             return {
                 ...state, news: newsAPI, 
-                isFavorite:false, 
-                visibleModalCountry: false
+                isFavorite:false
             }
         }
         case CHANGE_TYPE_NEWS:{
             const isFavorite = action.payload.isFavorite;
             return {...state, isFavorite: isFavorite}
-        }
-        case CHANGE_VISIBLE_MODAL:{
-            const visible = action.payload.isVisible
-            return{...state, visibleModalCountry: visible}
         }
         default:
             return state;

@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import styles from './styles'
 
 
-function ModalCountry(props) {
+function PickerCountry(props) {
 
     const [selectedValue, setSelectedValue] = useState("BSele");
 
@@ -15,16 +15,6 @@ function ModalCountry(props) {
                 style={styles.picker}
                 selectedValue={selectedValue}
                 onValueChange={(itemValue, itemIndex) => {
-
-                    // let query = `country=${itemValue}`
-                    // let endPoint = new EndPoint("top-headlines", query)
-
-                    // let data = getData(endPoint);
-
-                    // data.then((resp) => {
-                    //     props.getNews(resp)
-                    //     setSelectedValue(itemValue)
-                    // })
                     
                     let query = `country=${itemValue}`
                     let endpoint = "top-headlines"
@@ -44,4 +34,4 @@ function ModalCountry(props) {
 }
 
 
-export default connect(null, { getNews })(ModalCountry);
+export default connect(null, { getNews })(PickerCountry);

@@ -12,8 +12,8 @@ function ContainerNews(props) {
                 style={{marginBottom: 220}}
                 data={props.isFavorite ? props.newsFavorites : props.news}
                 keyExtractor={(item) => item.title}
-                renderItem={({ item }) =>
-                    <Card isFavorite={props.isFavorite} item={item} />}
+                renderItem={({ item, index }) =>
+                    <Card index={index} isFavorite={props.isFavorite} item={item} />}
             />
         </View>
     )

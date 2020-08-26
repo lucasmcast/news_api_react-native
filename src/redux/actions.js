@@ -9,7 +9,9 @@ import
     ADD_FAVORITE, 
     CHANGE_TYPE_NEWS, 
     CHANGE_VISIBLE_MODAL,
-    SHOW_NEWS
+    SHOW_NEWS,
+    DEL_NEWS_FAVORITES,
+    ADD_MODAL_NEWS
 
 } from './actionsTypes'
 
@@ -47,16 +49,21 @@ export const addFavorite = news => ({
     }
 })
 
+/**
+ * Delete card of Array Favorite News
+ * 
+ * @param {Integer} index 
+ */
+export const delFavorite = index => ({
+    type: DEL_NEWS_FAVORITES,
+    payload:{
+        index
+    }
+})
+
 export const changeTypeNews = isFavorite => ({
     type: CHANGE_TYPE_NEWS,
     payload:{
         isFavorite
-    }
-});
-
-export const changeVisibleModal = isVisible => ({
-    type: CHANGE_VISIBLE_MODAL,
-    payload:{
-        isVisible
     }
 });

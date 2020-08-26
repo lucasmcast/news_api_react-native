@@ -1,4 +1,4 @@
-import {GET_NEWS, SHOW_NEWS, CHANGE_TYPE_NEWS, CHANGE_VISIBLE_MODAL} from '../actionsTypes'
+import {SHOW_NEWS, CHANGE_TYPE_NEWS, CHANGE_VISIBLE_MODAL} from '../actionsTypes'
 
 const initialState = {
     news: [],

@@ -4,10 +4,18 @@ import styles from './styles';
 import { connect } from 'react-redux'
 import { changeTypeNews } from '../../redux/actions'
 
+/**
+ * favorite news button action on the tabbar
+ * @param {Function} dispatch - function dispatch by redux
+ */
 const handleClickFavorites = (dispatch) => (event) => {
     dispatch(true)
 }
 
+/**
+ * news button action highlighted in tabbar
+ * @param {Function} dispatch - function dispatch by redux
+ */
 const handleClickDestaques = (dispatch) => (event) => {
     dispatch(false)
 }

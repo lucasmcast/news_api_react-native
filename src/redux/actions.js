@@ -1,3 +1,8 @@
+/**
+ * Actions for redux
+ * @author Lucas Martins de Castro <lucas.martins.c03@gmail.com>
+ * @since 1.0.0
+ */
 import 
 {
     GET_NEWS, 
@@ -8,13 +13,22 @@ import
 
 } from './actionsTypes'
 
-export const getNews = (endpoint, query) => ({
+/**
+ * Send the request to redux-sagas
+ * @param {EndPoint} functionSearch - url search function
+ * @param {String} query - query settings in api search
+ */
+export const getNews = (functionSearch, query) => ({
     type: GET_NEWS,
     payload: {
-        endpoint, query
+        functionSearch, query
     }
 })
 
+/**
+ * Send the news object for redux
+ * @param {Object} news - returned Object by API request 
+ */
 export const showNews = (news) => ({
     type: SHOW_NEWS,
     payload: {
@@ -22,6 +36,10 @@ export const showNews = (news) => ({
     }
 })
 
+/**
+ * 
+ * @param {Object} news - returned Object by favorite action 
+ */
 export const addFavorite = news => ({
     type: ADD_FAVORITE,
     payload:{

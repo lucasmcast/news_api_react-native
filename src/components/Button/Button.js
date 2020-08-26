@@ -4,14 +4,27 @@ import styles from './styles';
 import {connect} from 'react-redux'
 import {addFavorite} from '../../redux/actions'
 
+/**
+ * clinck action of the favorite button.
+ * @param {Object} task - API news
+ * @param {Function} dispatch - function of dispatch redux
+ */
 let handleClickButtonFavorite = (task, dispatch) => event =>{
     dispatch(task)
 }
 
+/**
+ * clinck action of the View more button.
+ * @param {Object} task - API news
+ */
 let handleClickButtonModal = (task) => event =>{
     console.log("Modal")
 }
 
+/**
+ * clinck action of the delete button.
+ * @param {Object} task -  API news
+ */
 let handleClickButtonDelete = (task) => event =>{
     console.log("Apagou")
 }
